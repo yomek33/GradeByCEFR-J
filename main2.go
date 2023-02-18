@@ -12,7 +12,7 @@ import (
 func main(){
 	data := make([][]string, 0)
 	data = append(data, readCSV("data/cefrj-vocabulary-profile-1.5.csv")...)
-	data = append(data, readCSV("data/cefrj-vocabulary-profile-1.5.csv")...)
+	data = append(data, readCSV("data/octanove-vocabulary-profile-c1c2-1.0.csv")...)
 
 	newFile, err := os.Create("data/newfile.csv")
 	if err != nil {
@@ -22,12 +22,14 @@ func main(){
     defer writer.Flush()
 
 	for _, record := range data {
-        err := writer.Write(record)
-		if err != nil {
-			panic(err)
+		if record[2] != "CEFR"{
+			err := writer.Write(record[:3])
+			if err != nil {
+				panic(err)
+			}
 		}
     }
-	fmt.Println("/nbind!!")
+	fmt.Println("bind!!")
 }
 
 func readCSV(filename string) [][]string {
