@@ -6,4 +6,4 @@ This repository uses ["Open Language Profiles — English datasets from CEFR-J"]
 
 # Part-Of-Speech Tagger
 
-This reoisitory uses ["Go wrapper for Stanford NLP Part-Of-Speech Tagger (GPLv2)"](https://github.com/kamildrazkiewicz/go-stanford-nlp)
+This repository uses a library called [prose](https://github.com/jdkato/prose) to tag the parts of speech of words.
